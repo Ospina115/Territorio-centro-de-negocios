@@ -39,7 +39,7 @@ body{
         display: none;
     }
     .action_btn{
-        background-color: orange;
+        background-color: rgb(206, 134, 0);
         color: #fff;
         padding: 0.5rem 1rem;
         border: none;
@@ -133,17 +133,20 @@ a:hover{
 
 /* CUERPO DE PAGINA */
 main{
-    background: url(/images/slider\ 1.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+.fondin{
+    background: url(/images/slider\ 1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;    
+}
 .texto{
+    backdrop-filter: blur(10px);
     text-align: center;
     padding: 20%;
-    backdrop-filter: blur(10px);
+
     color: black;
 }
 h1{
