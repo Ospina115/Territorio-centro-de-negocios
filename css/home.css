@@ -14,7 +14,11 @@ body{
 
 /* HEADER */
     header{
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
         padding: 5px 2rem;
         background-color: #181818;
         color: #D1D1D1;
@@ -143,11 +147,11 @@ main{
     background-repeat: no-repeat;    
 }
 .texto{
-    backdrop-filter: blur(10px);
+    backdrop-filter: brightness(60%) blur(5px);
     text-align: center;
     padding: 20%;
 
-    color: black;
+    color: rgb(255, 255, 255);
 }
 h1{
     font-size: 500%;
@@ -160,15 +164,45 @@ span {
 } 
 @keyframes rgb {
 0% {
-    color: rgb(41, 116, 228);
+    color: rgb(250, 83, 83);
 }
 33% {
-    color: rgb(255, 106, 106);
+    color: rgb(151, 255, 82);
 }
 66% {
-    color: rgb(3, 100, 0);
+    color: rgb(124, 170, 255);
 }
 100% {
-    color: rgb(41, 116, 228);
+    color: rgb(250, 83, 83);
 }
+}
+
+.textolargo{
+    font-size: 150%;
+    text-align: center;
+    margin: 5% 30%;
+    font-style: italic;
+}  
+.beneficios{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+}
+.cadabeneficio{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+gmp-map {
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
 }

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/home.css">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGkLlRzyI5NU7IRo1GSuz9bxTs-eSvuD0&callback=console.debug&libraries=maps,marker&v=beta"></script>
     <title>TCDN | Home</title>
 </head>
 <body>
@@ -34,13 +36,36 @@
     <main>
         <div class="fondin">
             <div class="texto">
-            <h1>Territorio Centro de Negocios</h1>
-            <h3>Vive un nuevo concepto de <span>Oficina</span></h3>
+                <h1>Territorio Centro de Negocios</h1>
+                <h3>Vive un nuevo concepto de <span>Oficina</span></h3>
             </div>
         </div>
+        <p class="textolargo">Nuestros productos y servicios permiten a nuestros clientes concentrarse en su actividad principal, sin preocuparse por inversiones de mobiliario, equipos, gastos laborales, servicios públicos, seguridad, administración.</p>
         
-        <p>Nuestros productos y servicios permiten a nuestros clientes <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+        <div class="beneficios">
+            <div class="cadabeneficio">
+                <i class="fa-regular fa-clock"></i>
+                <p>maneje su tiempo y solo reunase con sus clientes cuando lo necesite</p>
+            </div>
+            <div class="cadabeneficio">
+                <i class="fa-solid fa-coins"></i>
+                <p>Reduccion en los costos en mas de un 80% de una oficina convencional</p>
+            </div>
+            <div class="cadabeneficio">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>Prestigiosa direccion en importante sector comercial de la ciudad</p>
+            </div>
+            <div class="cadabeneficio">
+                <i class="fa-solid fa-building"></i>
+                <p>Oficinas totalmente equipadas, por horas o el tiempo que sea necesario</p>
+            </div>
+        </div>
     </main>
+
+    <gmp-map center="7.123550891876221,-73.114013671875" zoom="16" map-id="Territorio">
+        <gmp-advanced-marker position="7.123550891876221,-73.114013671875" title="Oficinas"></gmp-advanced-marker>
+    </gmp-map><br><br><br><br><br><br><br><br><br><br>
     <script src="/js/home.js"></script>
+
 </body>
 </html>
