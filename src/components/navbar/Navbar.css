@@ -1,0 +1,256 @@
+/* Navbar Styles */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.75rem 2rem;
+  background-color: rgba(24, 24, 24, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-header.navbar-scrolled {
+  background-color: rgba(24, 24, 24, 0.98);
+  padding: 0.5rem 2rem;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-container {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand/Logo */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-full {
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.logo-compact {
+  display: none;
+  height: 50px;
+  transition: height 0.3s ease;
+}
+
+.navbar-scrolled .logo-full,
+.navbar-scrolled .logo-compact {
+  height: 40px;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff8c00, #ffa500);
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ff8c00;
+  transform: translateY(-2px);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* CTA Button */
+.cta-button {
+  background: linear-gradient(135deg, #ff8c00, #ff6b00);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+  display: inline-block;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 5px;
+}
+
+.mobile-menu-toggle:hover {
+  color: #ff8c00;
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 24px;
+  height: 18px;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.mobile-menu-toggle:hover .hamburger-icon span {
+  background-color: #ff8c00;
+}
+
+/* Mobile Dropdown */
+.mobile-dropdown {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-20px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-dropdown-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-dropdown-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-dropdown-link:hover {
+  background-color: rgba(255, 140, 0, 0.1);
+  color: #ff8c00;
+  padding-left: 2rem;
+}
+
+.mobile-dropdown-link:last-child {
+  border-bottom: none;
+}
+
+.mobile-cta {
+  margin: 1rem;
+  text-align: center;
+  width: calc(100% - 2rem);
+  border-radius: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar-links,
+  .cta-button:not(.mobile-cta) {
+    display: none;
+  }
+
+  .logo-full {
+    display: none;
+  }
+
+  .logo-compact {
+    display: block;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .mobile-dropdown {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .mobile-dropdown {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-compact {
+    height: 40px;
+  }
+
+  .navbar-scrolled .logo-compact {
+    height: 35px;
+  }
+}
