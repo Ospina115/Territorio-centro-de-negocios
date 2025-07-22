@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import './Navbar.css';
+import useResponsive from '../../hooks/useResponsive';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { isMobile, deviceType } = useResponsive();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +20,16 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  // Cerrar dropdown automáticamente en pantallas grandes
+  useEffect(() => {
+    if (!isMobile && isDropdownOpen) {
+      setIsDropdownOpen(false);
+    }
+  }, [isMobile, isDropdownOpen]);
+
   const navItems = [
     { id: 'home', label: 'Inicio', href: '#home' },
-    { id: 'services', label: 'Servicios', href: '#services' },
+    { id: 'nosotros', label: 'servicios', href: '#services' },
     { id: 'gallery', label: 'Galería', href: '#gallery' },
     { id: 'about', label: 'Nosotros', href: '#about' },
     { id: 'contact', label: 'Contacto', href: '#contact' }
@@ -34,12 +43,12 @@ const Navbar = () => {
         <div className="navbar-brand">
           <img 
             className="logo-full" 
-            src="/images/territoriocentrodenegocios logo.png" 
+            src="/assets/tcnLogotipoB.svg" 
             alt="Territorio Centro de Negocios" 
           />
           <img 
             className="logo-compact" 
-            src="/images/logo.png" 
+            src="tcnLogo.svg" 
             alt="Territorio" 
           />
         </div>
