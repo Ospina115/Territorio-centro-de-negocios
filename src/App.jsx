@@ -8,7 +8,6 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        {/* Aquí irán los demás componentes */}
       </main>
     </div>
   )

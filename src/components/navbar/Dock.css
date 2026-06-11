@@ -1,0 +1,98 @@
+.dock-outer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 1rem 0.85rem;
+  z-index: 1100;
+  pointer-events: none;
+}
+
+.dock-panel {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1rem 1rem;
+  backdrop-filter: blur(18px);
+  pointer-events: auto;
+  background-color: rgba(18, 15, 23, 0.78);
+}
+
+.dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.18),
+    0 4px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  outline: none;
+  padding: 0 0.75rem;
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: none;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dock-label {
+  position: absolute;
+  top: -1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: max-content;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: rgba(18, 15, 23, 0.95);
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .dock-panel {
+    gap: 0.65rem;
+    padding: 0.75rem 0.75rem 0.9rem;
+  }
+
+  .dock-item {
+    padding: 0 0.5rem;
+  }
+
+  .dock-icon {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 540px) {
+  .dock-panel {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .dock-item {
+    min-width: 5rem;
+  }
+}

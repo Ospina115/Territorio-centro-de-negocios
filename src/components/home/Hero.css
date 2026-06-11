@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/slider 1.jpg');
+  background-image: url('/assets/ImgFond.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -46,6 +46,14 @@
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Asegurar centrado vertical y horizontal en todos los dispositivos */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content-visible {
@@ -266,5 +274,139 @@
 
   .hero-background {
     background-attachment: scroll;
+  }
+}
+
+/* Reservation modal styles */
+.reservation-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+.reservation-modal {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(8px) saturate(1.05);
+  border-radius: 12px;
+  max-width: 680px;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  color: #fff;
+  position: relative;
+}
+
+.reservation-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.reservation-title {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+.reservation-options {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.service-option {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.service-option.active,
+.service-option:hover {
+  background: linear-gradient(135deg, #ff6b00, #ff8c00);
+  border-color: rgba(255,140,0,0.6);
+  color: #fff;
+}
+
+.reservation-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #e6e6e6;
+  font-weight: 600;
+}
+
+.reservation-textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 90px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.reservation-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .reservation-modal {
+    padding: 1rem;
+  }
+
+  .reservation-options {
+    gap: 0.5rem;
+  }
+
+  .reservation-actions {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+}
+
+/* Override: centrar absolutamente el contenido del hero para evitar solapamientos */
+.hero-section .hero-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-section .hero-content.hero-content-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .hero-section .hero-content {
+    top: calc(50% + 20px);
+    transform: translate(-50%, -50%);
+    padding: 0 1rem;
   }
 }
